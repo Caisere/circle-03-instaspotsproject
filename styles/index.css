@@ -24,12 +24,10 @@ body {
   font-style: normal;
   background-color: var(--primary-color);
 }
-
 /* Project parent container */
 .container {
   max-width: var(--maxWidth);
 }
-
 /*header styling*/
 header {
   padding: .8rem 4rem;
@@ -109,30 +107,32 @@ hr{
 }
 
 /* Mobile View Styling */
-@media (min-width: 320px) and (max-width: 480px) {
+@media  (max-width: 480px) {
   .container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
     min-height: 100vh;
   }
   /* Hero Section styles  */
   .hero {
     width: 100%;
     background-color: var(--primary-color);
+    padding-block: 20px;
     height: 49px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .flex_container {
-    min-height: 294px;
-    margin: 20px;
+    height: 366px;
+    margin: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 8px;
   }
   .hero-content {
@@ -144,21 +144,23 @@ hr{
     height: 100px;
   }
   .hero-text {
+    padding: 8px;
     margin-top: 12px;
     font-weight: 500;
     height: 130px;
   }
   .hero-text p {
-    font-size: 30px;
-    line-height: 1.875rem;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.35rem;
     color: var(--text-primary-color);
   }
   .hero-text p:nth-child(2) {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.25rem;
     color: #212121;
     opacity: 0.7;
-    padding: 8px 0 22px 0;
+    padding-top: 6px;
   }
   /* Edit Profile Button  */
   .edit_profile {
@@ -171,9 +173,9 @@ hr{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 8px auto;
+    margin: 20px auto;
     gap: 8px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
   }
   .edit_profile:hover {
@@ -189,11 +191,12 @@ hr{
     color: var(--button-text-color);
     border-radius: 8px;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
+    margin-bottom: -10px;
   }
   .hero-action-button:hover {
     transition: opacity ease-in 0.5s;
@@ -239,7 +242,7 @@ hr{
   .card-text p {
     color: var(--text-primary-color);
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.25rem;
   }
   .card-text img {
@@ -260,7 +263,7 @@ hr{
     color: var(--text-primary-color);
     opacity: 0.7;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.25rem;
-  }
+}
 }
