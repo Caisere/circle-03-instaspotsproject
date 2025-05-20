@@ -65,14 +65,14 @@ cancelBtn.addEventListener("click", closeModal);
 
 // Close modal when clicking outside
 window.addEventListener("click", function (event) {
-  if (event.target === modal)  {
-    closeModal();
+  if(event.target === modal)  {
+      closeModal();
   }
-});
+}); 
 
 // Handle form submission
 profileForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+    e.preventDefault();
 
   // Update profile information
   document.querySelector(".text1 h1").textContent = profileName.value;
