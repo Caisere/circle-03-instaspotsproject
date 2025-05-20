@@ -28,7 +28,6 @@ body {
 /* Project parent container */
 .container {
     max-width: var(--maxWidth);
-    
 }
 
 .wrapper {
