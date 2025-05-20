@@ -23,11 +23,12 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-style: normal;
-     background-color: var(--background-color);
+    background-color: var(--background-color);
 }
 /* Project parent container */
 .container {
     max-width: var(--maxWidth);
+    
 }
 
 .wrapper {
@@ -125,6 +126,7 @@ body {
 }
 
 /* Desktop View Styling */
+
 main {
     width: 100%;
 }
@@ -207,7 +209,7 @@ footer p {
 
 .close {
     position: absolute;
-    right: 1rem;
+    right: 1.3rem;
     top: 1rem;
     font-size: 1.5rem;
     cursor: pointer;
@@ -274,6 +276,55 @@ footer p {
 .save-btn:hover,
 .cancel-btn:hover {
     opacity: 0.8;
+}
+
+/* image modal */
+.imgModal {
+    overflow: visible;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.img-content{
+    width: 100%;
+    height: 80%;
+    background-color: var(--background-color);
+    margin: 7% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 1000px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+} 
+.img-content > img{
+   width: 80%;
+   height: 80%;
+   object-fit: cover;  
+  border-radius: 12px;   /* ⬅️ Soft rounded corners */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* ⬅️ subtle shadow */
+  transition: transform 0.3s ease; 
+} 
+.img-content > img:hover{
+    transform: scale(1.02);
+}
+
+.modalText{
+    width:80%;
+    display: flex;
+    justify-content: space-between;
+} 
+.modalText p{
+     font-weight: 400;
 }
 
 /* Tablet or Pad Styling */
@@ -423,7 +474,6 @@ footer p {
 
 /* Mobile View Styling */
 @media (max-width: 480px) {
-  
 
     /* Hero Section styles removed the redundant height  */
     .hero {
@@ -466,7 +516,7 @@ footer p {
         color: var(--text-primary-color);
     }
 
-    /* changed fontsiz to 1rem */
+    /* changed fontsize to 1rem */
     .hero-text .text1 p {
         font-size: 1.1rem;
         color: #212121;
@@ -577,4 +627,16 @@ footer p {
     .cancel-btn {
         width: 100%;
     }
+
+    /* Mobile Card styles */
+.img-content{
+    width: 100%;
+}
+.img-content > img{
+   width: 100%;
+   height: 60%;
+} 
+.modalText{
+    width:100%;
+} 
 }

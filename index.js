@@ -65,7 +65,7 @@ cancelBtn.addEventListener("click", closeModal);
 
 // Close modal when clicking outside
 window.addEventListener("click", function (event) {
-  if (event.target === modal) {
+  if (event.target === modal)  {
     closeModal();
   }
 });
@@ -90,24 +90,3 @@ profileForm.addEventListener("submit", function (e) {
 
   closeModal();
 });
-
-function displayCard(cards) {
-    cardsContainer.innerHTML = ``;
-    if (cards.length > 0) {
-        cards.forEach(card => {
-            const cardsItem = document.createElement('div');
-            cardsItem.classList.add('card');
-            cardsItem.innerHTML = `
-                <img src="${card.image} "alt="${card.name}"/>
-                <div class="card-text">
-                    <p>${card.text}</p>
-                    <img src="./assets/images/Union.svg" alt="love icon" />
-                </div>
-            `;
-            cardsContainer.append(cardsItem)
-            console.log('worked')
-        })
-    }
-}
-
-displayCard(cards)
