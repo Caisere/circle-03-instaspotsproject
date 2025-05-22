@@ -32,10 +32,10 @@ const cards = [
 ];
 
 // Get DOM elements
-const editBtn = document.querySelector("#edit_btn");
+const editBtn = document.querySelector("#profile__edit-btn");
 const modal = document.getElementById("profileModal");
-const closeBtn = document.querySelector(".close");
-const cancelBtn = document.querySelector(".cancel-btn");
+const closeBtn = document.querySelector(".modal__close");
+const cancelBtn = document.querySelector(".modal__cancel-btn");
 const profileForm = document.getElementById("profileForm");
 const profileName = document.getElementById("profileName");
 const profileBio = document.getElementById("profileBio");
@@ -43,9 +43,9 @@ const profileImage = document.getElementById("profileImage");
 const cardsContainer = document.querySelector(".cards");
 
 // Get current profile data
-const currentName = document.querySelector(".text1 h1").textContent;
-const currentBio = document.querySelector(".text1 p").textContent;
-const currentImage = document.querySelector(".avatar-image img");
+const currentName = document.querySelector(".profile__name").textContent;
+const currentBio = document.querySelector(".profile__bio").textContent;
+const currentImage = document.querySelector(".profile__avatar-image");
 
 // Open modal
 editBtn.addEventListener("click", function () {
@@ -75,8 +75,8 @@ profileForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
   // Update profile information
-  document.querySelector(".text1 h1").textContent = profileName.value;
-  document.querySelector(".text1 p").textContent = profileBio.value;
+  document.querySelector(".profile__name").textContent = profileName.value;
+  document.querySelector(".profile__bio").textContent = profileBio.value;
 
   // Handle image upload
   const file = profileImage.files[0];
@@ -98,10 +98,10 @@ function displayCard(cards) {
       const cardsItem = document.createElement("div");
       cardsItem.classList.add("card");
       cardsItem.innerHTML = `
-                <img src="${card.image} "alt="${card.name}"/>
-                <div class="card-text">
-                    <p>${card.text}</p>
-                    <img src="./assets/images/Union.svg" alt="love icon" />
+                <img class="card__image" src="${card.image} "alt="${card.name}"/>
+                <div class="card__content">
+                    <p class="card__text">${card.text}</p>
+                    <img class="card__icon" src="./assets/images/Union.svg" alt="love icon" />
                 </div>
             `;
       cardsContainer.append(cardsItem);
@@ -115,17 +115,17 @@ const cardElements = document.querySelectorAll(".card");
 
 // Get card Modal Element
 const modalImg = document.getElementById("modalImg");
-const modalText = document.querySelector(".modalText p");
-const modalTextImg = document.querySelector(".modalText img");
+const modalText = document.querySelector(".modal__text p");
+const modalTextImg = document.querySelector(".modal__text img");
 const imageModal = document.getElementById("imageModal");
-const closeImgBtn = document.querySelector(".imgModal .img-content .close");
+const closeImgBtn = document.querySelector(".imgModal .imageModal__content .modal__close");
 
 //mapping through cards
 cardElements.forEach((card) => {
   // Getting each card properties
   const cardImg = card.querySelector("img");
-  const cardText = card.querySelector(".card-text p").textContent;
-  const cardTextImg = card.querySelector(".card-text img");
+  const cardText = card.querySelector(".card__text").textContent;
+  const cardTextImg = card.querySelector(".card__icon");
 
   card.addEventListener("click", () => {
     imageModal.style.display = "block";

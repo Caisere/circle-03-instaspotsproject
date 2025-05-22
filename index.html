@@ -9,39 +9,39 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="instaspots">
             <!-- Hero Section -->
             <header class="hero" role="banner">
                 <!-- Logo Section -->
-                <nav class="logo" role="navigation">
-                    <img src="./assets/images/Logo.svg" alt="InstaSpots Logo Text">
+                <nav class="hero__logo" role="navigation">
+                    <img class="hero__logo-image"  src="./assets/images/Logo.svg" alt="InstaSpots Logo Text">
                 </nav>
             </header>
 
         
             <!-- Hero Content Section -->
-                <section class="flex_container wrapper">
+                <section class="profile wrapper">
                     <!-- Avatar Image Section -->
-                    <figure class="avatar-image">
-                        <img src="./assets/images/Avatar.png" alt="Avatar Image">
+                    <figure class="profile__avatar avatar-image">
+                        <img class="profile__avatar-image" src="./assets/images/Avatar.png" alt="Avatar Image">
                     </figure>
 
                     <!-- Hero Text Section -->
-                    <article class="hero-text">
-                        <div class="text1">
-                            <h1>Aliaune Damala Bouga Time Bongo Puru Nacka Lu Lu Lu Badara Akon...</h1>
-                            <p>Known mononymously as Akon (/ˈeɪkɒn/), is a Senegalese-American singer, record producer, and
+                    <article class="profile__info">
+                        <div class="profile__text">
+                            <h1 class="profile__name">Aliaune Damala Bouga Time Bongo Puru Nacka Lu Lu Lu Badara Akon...</h1>
+                            <p class="profile__bio">Known mononymously as Akon (/ˈeɪkɒn/), is a Senegalese-American singer, record producer, and
                                 entrepreneur. An influential figure in modern world...</p>
                         </div>
                         <!-- Hero Actions Section -->
-                        <div class="hero-actions">
+                        <div class="profile__actions">
                         <!-- Edit Profile Button Section -->
-                            <button id="edit_btn" class="edit_profile">
+                            <button id="profile__edit-btn" class="profile__edit-btn">
                                 <span><i class="fa-solid fa-pencil"></i></span>
                                 Edit Profile
                             </button>
                             <!-- New Post Button Section -->
-                            <button class="hero-action-button">
+                            <button class="profile__newpost-btn">
                                 <span><img src="./assets/images/Group 26.svg" alt="New Post Icon"></span>
                                 New Post
                             </button>
@@ -50,7 +50,7 @@
                 </section>
 
             <!-- section break -->
-            <hr class="empty-div wrapper"></hr>
+            <hr class="horizontal-line wrapper"> </hr>
             
             <!-- Main Section -->
             <main class="main wrapper">
@@ -60,10 +60,10 @@
             </main>
 
             <!-- section break -->
-            <hr class="empty-div wrapper"></hr>
+            <hr class="horizontal-line wrapper"></hr>
             <!-- Footer Section -->
             <footer class="footer wrapper">
-                <p>2024 &#169; Spots</p>
+                <p class="footer__copyright">2024 &#169; Spots</p>
             </footer>
 
         </div>
@@ -71,44 +71,50 @@
 
 
         <!-- Profile Edit Modal -->
-        <div id="profileModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Edit Profile</h2>
-                <form id="profileForm">
-                    <div class="form-group">
+        <dialog id="profileModal" class="modal">
+            <div class="modal__content" role="document">
+                <header class="modal__header">
+                    <h2 id="modalTitle">Edit Profile</h2>
+                    <button type="button" class="modal__close">&times;</button>
+                </header>
+               
+                <form id="profileForm" class="modal__form">
+                    <div class="modal__form-group">
                         <label for="profileName">Name:</label>
                         <input type="text" id="profileName" name="profileName" minlength="3" maxlength="200" required>
                     </div>
-                    <div class="form-group">
+                    <div class="modal__form-group">
                         <label for="profileBio">Bio:</label>
                         <textarea id="profileBio" name="profileBio" rows="4" required></textarea>
                     </div>
-                    <div class="form-group">
+                    <div class="modal__form-group">
                         <label for="profileImage">Profile Image:</label>
                         <input type="file" id="profileImage" name="profileImage" accept="image/*">
                     </div>
-                    <div class="form-actions">
-                        <button type="submit" class="save-btn">Save Changes</button>
-                        <button type="button" class="cancel-btn">Cancel</button>
-                    </div>
+                    <footer class="modal__actions">
+                        <button type="submit" class="modal__save-btn">Save Changes</button>
+                        <button type="button" class="modal__cancel-btn">Cancel</button>
+                    </footer>
                 </form>
             </div>
-        </div>
+        </dialog>
 
 
 
         <!-- Image Card Modal -->
-        <div id="imageModal" class="imgModal">
-            <div class="img-content">
-                <span class="close">&times;</span>
-                 <img  id="modalImg" src="" />
-                        <div class="modalText">
+        <dialog id="imageModal" class="imgModal">
+            <div class="img-content imageModal__content" role="document">
+                <!-- <span class="close">&times;</span> -->
+                <button type="button" class="modal__close">
+                    &times;
+                </button>
+                    <img  id="modalImg" class="" src="" alt="" />
+                        <div class="modal__text">
                             <p ></p>
                             <img src="" alt="" />
                         </div>
-            </div>
-        </div>
+          </div>
+        </dialog>
         <script type="module" src="index.js"></script>
     </body>
 </html>

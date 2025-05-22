@@ -25,7 +25,7 @@ body {
   background-color: var(--background-color);
 }
 /* Project parent container */
-.container {
+.instaspots {
   max-width: var(--maxWidth);
 }
 
@@ -35,7 +35,7 @@ body {
 }
 
 /*header styling*/
-.container .hero {
+.instaspots .hero {
   padding: 0.8rem 4rem;
   display: flex;
   justify-content: center;
@@ -44,14 +44,14 @@ body {
   width: 100vw;
 }
 
-.logo {
+.hero__logo {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* removed border-b style */
-.flex_container {
+.profile {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -59,28 +59,28 @@ body {
   max-width: 1340px;
 }
 
-.hero-text {
+ .profile__info {
   width: 100%;
   display: flex;
   flex-direction: column;
   padding-left: 20px;
 }
 
-.text1 {
+ .profile__text {
   width: 120ch;
 }
 
-.avatar-image img {
+.profile__avatar-image {
   width: 200px;
 }
 
-.text1 h1 {
+.profile__name {
   font-size: 2rem;
   font-weight: 500;
   max-width: 35%;
   line-height: 36px;
 }
-.text1 p {
+.profile__bio {
   font-weight: 500;
   font-size: 1rem;
   color: #212121b2;
@@ -88,24 +88,24 @@ body {
   max-width: 40%;
   padding-top: 10px;
 }
-.hero-actions {
+.profile__actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.edit_profile {
+.profile__edit-btn {
   border: none;
   background-color: transparent;
   color: #212121b2;
   cursor: pointer;
 }
-.edit_profile span {
+.profile__edit-btn span {
   margin-inline-end: 5px;
 }
 
 /* changed the mr value */
-.hero-action-button {
+.profile__newpost-btn {
   background-color: #212121;
   color: white;
   border: none;
@@ -117,7 +117,7 @@ body {
   margin-right: 3.5rem;
 }
 
-.hero-action-button:hover {
+.profile__newpost-btn:hover {
   background-color: #212121;
   opacity: 0.7;
 }
@@ -140,22 +140,22 @@ main section img:first-child {
   width: 100%;
   border-radius: 5px;
 }
-main section .card-text {
+main section .card__content {
   margin-block-start: 10px;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-main section .card-text i {
+main section .card__content i {
   color: rgb(165, 165, 165);
   font-weight: 100;
 }
-main section .card-text p {
+main section .card__text {
   font-weight: 400;
 }
 /* added height rather than border-b on horizontal line */
-.empty-div {
+.horizontal-line {
   width: 90%;
   height: 1px;
   background-color: #6e6e6eb2;
@@ -169,7 +169,7 @@ footer {
 }
 
 /* added mt & mb */
-footer p {
+.footer__copyright {
   color: var(--text-primary-color);
   opacity: 0.7;
   font-weight: 400;
@@ -192,7 +192,7 @@ footer p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.modal-content {
+.modal__content {
   background-color: var(--background-color);
   margin: 10% auto;
   padding: 2rem;
@@ -202,32 +202,34 @@ footer p {
   position: relative;
 }
 
-.close {
+.modal__close {
   position: absolute;
   right: 1rem;
   top: 1rem;
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--text-primary-color);
+  background: transparent;
+  border: none;
 }
 
-.close:hover {
+.modal__close:hover {
   opacity: 0.7;
 }
 
-.form-group {
+.modal__form-group {
   margin-bottom: 1.5rem;
 }
 
-.form-group label {
+.modal__form-group label {
   display: block;
   margin-bottom: 0.5rem;
   color: var(--text-primary-color);
   font-weight: 500;
 }
 
-.form-group input[type="text"],
-.form-group textarea {
+.modal__form-group input[type="text"],
+.modal__form-group textarea {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ddd;
@@ -236,20 +238,20 @@ footer p {
   font-size: 1rem;
 }
 
-.form-group input[type="file"] {
+.modal__form-group input[type="file"] {
   width: 100%;
   padding: 0.5rem 0;
 }
 
-.form-actions {
+.modal__actions {
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
   margin-top: 2rem;
 }
 
-.save-btn,
-.cancel-btn {
+.modal__save-btn,
+.modal__cancel-btn {
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 4px;
@@ -258,18 +260,18 @@ footer p {
   transition: opacity 0.3s ease;
 }
 
-.save-btn {
+.modal__save-btn {
   background-color: var(--text-primary-color);
   color: var(--button-text-color);
 }
 
-.cancel-btn {
+.modal__cancel-btn {
   background-color: #ddd;
   color: var(--text-primary-color);
 }
 
-.save-btn:hover,
-.cancel-btn:hover {
+.modal__save-btn:hover,
+.modal__cancel-btn:hover {
   opacity: 0.8;
 }
 
@@ -287,7 +289,7 @@ footer p {
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.img-content {
+.imageModal__content  {
   width: 100%;
   height: 80%;
   background-color: var(--background-color);
@@ -301,7 +303,7 @@ footer p {
   justify-content: space-evenly;
   align-items: center;
 }
-.img-content > img {
+.imageModal__content > img {
   width: 80%;
   height: 80%;
   object-fit: cover;
@@ -309,16 +311,16 @@ footer p {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* ⬅️ subtle shadow */
   transition: transform 0.3s ease;
 }
-.img-content > img:hover {
+.imageModal__content > img:hover {
   transform: scale(1.02);
 }
 
-.modalText {
+.modal__text {
   width: 80%;
   display: flex;
   justify-content: space-between;
 }
-.modalText p {
+.modal__text p {
   font-weight: 400;
 }
 
@@ -336,7 +338,7 @@ footer p {
     justify-content: center;
   }
 
-  .flex_container {
+   .profile {
     width: 100%;
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -345,12 +347,12 @@ footer p {
     gap: 8px;
   }
 
-  .avatar-image > img {
+  .profile__avatar-image {
     border-radius: 8px;
     width: 100%;
   }
 
-  .hero-text .text1 {
+  .profile__text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -359,7 +361,7 @@ footer p {
     text-align: start;
   }
 
-  .hero-text .text1 h1 {
+  .profile__name {
     max-width: 100%;
     width: 100%;
     text-align: inherit;
@@ -367,12 +369,12 @@ footer p {
     line-height: 1.35rem;
   }
 
-  .hero-text .text1 p {
+  .profile__bio {
     font-size: 1rem;
     max-width: 100%;
   }
 
-  .hero-actions {
+  .profile__actions {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -380,14 +382,14 @@ footer p {
   }
 
   /* Edit Profile Button  */
-  .edit_profile {
+  .profile__edit-btn {
     margin-block: 20px;
     font-size: 1.2rem;
     font-weight: 500;
   }
 
   /* remove the maxwidth */
-  .hero-action-button {
+  .profile__newpost-btn {
     background-color: var(--text-primary-color);
     color: var(--button-text-color);
     font-weight: 500;
@@ -397,7 +399,7 @@ footer p {
   }
 
   /* didn't add height here since i added it to the desktop */
-  .empty-div {
+  .horizontal-line {
     width: 97%;
   }
 
@@ -425,25 +427,25 @@ footer p {
     object-fit: cover;
   }
 
-  .card-text {
+  .card__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .card-text p {
+  .card__text {
     color: var(--text-primary-color);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.25rem;
   }
 
-  .card-text img {
+  .card__icon {
     color: var(--text-primary-color);
     opacity: 0.4;
   }
 
-  .card-text img:hover {
+  .card__content .card__icon:hover {
     opacity: unset;
   }
 
@@ -455,7 +457,7 @@ footer p {
     justify-content: center;
   }
 
-  footer p {
+  .footer__copyright {
     color: var(--text-primary-color);
     opacity: 0.7;
     font-weight: 400;
@@ -477,29 +479,29 @@ footer p {
   }
 
   /* made some changes here */
-  .flex_container {
+  .profile {
     display: flex;
     flex-direction: column;
   }
 
-  .avatar-image > img {
+  .profile__avatar-image {
     border-radius: 8px;
     width: 150px;
     height: 150px;
   }
 
   /* added width to the hero-text */
-  .hero-text {
+  .profile__info {
     width: 38ch;
   }
 
   /* removed width */
-  .hero-text .text1 {
+  .profile__text {
     text-align: center;
   }
 
   /* removed max-with */
-  .hero-text .text1 h1 {
+  .profile__name {
     font-weight: 500;
     text-align: center;
     font-size: 1.3rem;
@@ -508,7 +510,7 @@ footer p {
   }
 
   /* changed fontsize to 1rem */
-  .hero-text .text1 p {
+  .profile__bio {
     font-size: 1.1rem;
     color: #212121;
     opacity: 0.7;
@@ -516,7 +518,7 @@ footer p {
   }
 
   /* Edit Profile Button  */
-  .edit_profile {
+  .profile__edit-btn {
     border: none;
     background-color: var(--background-color);
     color: var(--text-primary-color);
@@ -526,7 +528,7 @@ footer p {
     font-weight: 500;
   }
 
-  .hero-action-button {
+   .profile__newpost-btn {
     background-color: var(--text-primary-color);
     width: var(--mobileMaxWidth);
     color: var(--button-text-color);
@@ -537,7 +539,7 @@ footer p {
   }
 
   /* added empty div from mobile styling */
-  .empty-div {
+  .horizontal-line {
     width: 90%;
   }
 
@@ -562,68 +564,52 @@ footer p {
     object-fit: cover;
   }
 
-  .card-text {
+  .card__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .card-text p {
+  .card__text {
     color: var(--text-primary-color);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.25rem;
   }
 
-  .card-text img {
+  .card__icon {
     color: var(--text-primary-color);
     opacity: 0.4;
   }
 
-  .card-text img:hover {
+  .card__icon:hover {
     opacity: unset;
   }
 
-  /* Footer Section */
-  footer {
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  footer p {
-    color: var(--text-primary-color);
-    opacity: 0.7;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.25rem;
-  }
-
   /* Modal Styling for Mobile */
-  .modal-content {
+  .modal__content {
     margin: 20% auto;
     padding: 1.5rem;
     width: 95%;
   }
 
-  .form-actions {
+  .modal__actions {
     flex-direction: column;
   }
 
-  .save-btn,
-  .cancel-btn {
+  .modal__save-btn,
+  .modal__cancel-btn {
     width: 100%;
   }
   /* Mobile Card styles */
-  .img-content {
+  .imageModal__content {
     width: 100%;
   }
-  .img-content > img {
+  .imageModal__content > img {
     width: 100%;
     height: 60%;
   }
-  .modalText {
+  .modal__text {
     width: 100%;
   }
 }
