@@ -152,6 +152,11 @@ main section {
 main section img:first-child {
     width: 100%;
     border-radius: 5px;
+    transition: transform 0.7s ease-in;
+}
+main section img:first-child:hover{
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 main section .card__content {
   margin-block-start: 10px;
@@ -322,7 +327,7 @@ footer {
   object-fit: cover;
   border-radius: 12px; /* ⬅️ Soft rounded corners */
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* ⬅️ subtle shadow */
-  transition: transform 0.3s ease;
+  transition: transform 0.9s ease-in;
 }
 .imageModal__content > img:hover {
   transform: scale(1.02);
