@@ -150,3 +150,11 @@ window.addEventListener("click", (e) => {
     closeCardModal();
   }
 });
+
+// Heart Icon
+  const heart = document.getElementById("heart");
+
+  heart.addEventListener("click", function () {
+    heart.classList.toggle("liked");
+  });
+
