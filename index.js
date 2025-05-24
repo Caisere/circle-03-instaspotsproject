@@ -120,29 +120,29 @@ function displayCard(cards) {
 }
 displayCard(cards);
 
-
 // after rendering cards, add keyboard and ARIA support
-function functionalLikeButton () {
-    document.querySelectorAll('.card__icon').forEach(icon => {
-      icon.addEventListener('click', function (e) {
-        e.stopPropagation(); // Prevent card click event from firing
-        this.classList.toggle('card__icon--active');
-        
-        // toggle aria-pressed
-        this.setAttribute('aria-pressed', this.classList.contains('card__icon--active'));
-        this.classList.add('card__icon--animate');
-        
-        // Remove animation class after animation completes
-        setTimeout(() => {
-          this.classList.remove('card__icon--animate');
-        }, 300);
-      });
+function functionalLikeButton() {
+  document.querySelectorAll(".card__icon").forEach((icon) => {
+    icon.addEventListener("click", function (e) {
+      e.stopPropagation(); // Prevent card click event from firing
+      this.classList.toggle("card__icon--active");
+
+      // toggle aria-pressed
+      this.setAttribute(
+        "aria-pressed",
+        this.classList.contains("card__icon--active")
+      );
+      this.classList.add("card__icon--animate");
+
+      // Remove animation class after animation completes
+      setTimeout(() => {
+        this.classList.remove("card__icon--animate");
+      }, 300);
     });
+  });
 }
 
 functionalLikeButton();
-
-
 
 //Cards Modal
 // const cardElements = document.querySelectorAll(".card");
@@ -152,39 +152,36 @@ const closeImgBtn = document.querySelector(
 );
 
 function setupCardPreviewModalListeners() {
-    //Cards Modal
-    const cardElements = document.querySelectorAll(".card");
-    
-    // Get card Modal Element
-    const modalImg = document.getElementById("modalImg");
-    const modalText = document.querySelector(".modal__text p");
-    const modalTextImg = document.querySelector(".modal__text img");
-    const imageModal = document.getElementById("imageModal");
+  //Cards Modal
+  const cardElements = document.querySelectorAll(".card");
 
-    
-    //mapping through cards
-    cardElements.forEach((card) => {
-      // Getting each card properties
-      const cardImg = card.querySelector("img");
-      const cardText = card.querySelector(".card__text").textContent;
-      const cardTextImg = card.querySelector(".card__icon");
-    
-      cardImg.addEventListener("click", () => {
-        imageModal.style.display = "block";
-        //checking
-        if (cardImg && cardText) {
-          modalImg.src = cardImg.src;
-          modalText.textContent = cardText;
-          modalTextImg.src = cardTextImg.src;
-          modalTextImg.alt = cardTextImg.alt;
-        }
-      });
+  // Get card Modal Element
+  const modalImg = document.getElementById("modalImg");
+  const modalText = document.querySelector(".modal__text p");
+  const modalTextImg = document.querySelector(".modal__text img");
+  const imageModal = document.getElementById("imageModal");
+
+  //mapping through cards
+  cardElements.forEach((card) => {
+    // Getting each card properties
+    const cardImg = card.querySelector("img");
+    const cardText = card.querySelector(".card__text").textContent;
+    const cardTextImg = card.querySelector(".card__icon");
+
+    cardImg.addEventListener("click", () => {
+      imageModal.style.display = "block";
+      //checking
+      if (cardImg && cardText) {
+        modalImg.src = cardImg.src;
+        modalText.textContent = cardText;
+        modalTextImg.src = cardTextImg.src;
+        modalTextImg.alt = cardTextImg.alt;
+      }
     });
+  });
 }
 
-setupCardPreviewModalListeners()
-
-
+setupCardPreviewModalListeners();
 
 // Close cardModal
 function closeCardModal() {
@@ -219,7 +216,11 @@ const titleHelp = document.getElementById("titleHelp");
 let isFavorite = true;
 
 // Open/close modal
-newPostBtn.addEventListener("click", () => newPostModal.showModal());
+// newPostBtn.addEventListener("click", () => newPostModal.showModal());
+newPostBtn.addEventListener("click", () => {
+  newPostModal.showModal();
+  validateForm();  // <-- Add this here to reset validation message immediately on open
+});
 newPostClose.addEventListener("click", () => newPostModal.close());
 postCnclBtn.addEventListener("click", () => newPostModal.close());
 
@@ -272,7 +273,7 @@ function validateForm() {
   const title = titleInput.value.trim();
   const titleLength = title.length;
   const min = 3;
-  const max = 50;
+  const max = 20;
   const imageValid = fileInput.files.length > 0;
   let message = "";
 
@@ -299,7 +300,7 @@ newPostForm.addEventListener("submit", (e) => {
 
   const title = titleInput.value.trim();
   const min = 3;
-  const max = 50;
+  const max = 20;
   const imageValid = fileInput.files.length > 0;
 
   // Validation check
@@ -313,13 +314,18 @@ newPostForm.addEventListener("submit", (e) => {
     text: titleInput.value,
     name: titleInput.value,
   };
-    cards.unshift(newCard);
-    displayCard(cards);
-    setupCardPreviewModalListeners()
-    functionalLikeButton();
+  cards.unshift(newCard);
+  displayCard(cards);
+  setupCardPreviewModalListeners();
+  functionalLikeButton();
   newPostModal.close();
   newPostForm.reset();
   preview.innerHTML = "";
   postBtn.disabled = true; // disable post button after reset
+  titleHelp.textContent = "";
+  titleHelp.classList.remove("valid");
+
+  validateForm();
+
   newPostBtn.focus();
 });
