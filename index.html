@@ -16,7 +16,7 @@
       <!-- Hero Section -->
       <header class="hero" role="banner">
         <!-- Logo Section -->
-        <nav class="hero__logo" role="navigation">
+        <nav class="hero__logo" role="navigation"  aria-label="Main navigation">
           <img
             class="hero__logo-image"
             src="./assets/images/Logo.svg"
@@ -26,7 +26,7 @@
       </header>
 
       <!-- Hero Content Section -->
-      <section class="profile wrapper">
+      <section class="profile wrapper" aria-labelledby="profile">
             <!-- Avatar Image Section -->
             <figure class="profile__avatar avatar-image">
                 <img
@@ -61,17 +61,17 @@
         </section>
 
         <!-- section break -->
-        <hr class="horizontal-line wrapper">
+        <hr class="horizontal-line wrapper" aria-hidden="true">
         
         <!-- Main Section -->
         <main class="main wrapper">
-            <section class="cards">
+            <section class="cards" aria-label="Photo gallery">
                 <!--List of Posted Cards-->
             </section>
         </main>
 
         <!-- section break -->
-        <hr class="horizontal-line wrapper" />
+        <hr class="horizontal-line wrapper" aria-hidden="true"/>
         <!--Main Page Footer Section -->
         <footer class="footer wrapper">
             <p class="footer__copyright">2024 &#169; Spots</p>
@@ -79,25 +79,27 @@
     </div>
 
         <!-- Profile Edit Modal -->
-        <dialog id="profileModal" class="modal">
+        <dialog id="profileModal" class="modal" aria-labelledby="modalTitle" aria-modal="true">
             <div class="modal__content" role="document">
                 <header class="modal__header">
                     <h2 id="modalTitle">Edit Profile</h2>
-                    <button type="button" class="modal__close" aria-label="close">&times;</button>
+                    <button type="button" class="modal__close" aria-label="Close modal">&times;</button>
                 </header>
                
-                <form id="profileForm" class="modal__form">
+                <form id="profileForm" class="modal__form" aria-label="Edit profile form">
                     <div class="modal__form-group">
                         <label for="profileName">Name:</label>
-                        <input type="text" id="profileName" name="profileName" minlength="3" maxlength="200" required>
+                        <input type="text" id="profileName" name="profileName" minlength="3" maxlength="200" required  aria-required="true"
+                            aria-labelledby="nameLabel">
                     </div>
                     <div class="modal__form-group">
                         <label for="profileBio">Bio:</label>
-                        <textarea id="profileBio" name="profileBio" rows="4" required></textarea>
+                        <textarea id="profileBio" name="profileBio" rows="4" required aria-required="true"
+                            aria-labelledby="bioLabel"></textarea>
                     </div>
                     <div class="modal__form-group">
                         <label for="profileImage">Profile Image:</label>
-                        <input type="file" id="profileImage" name="profileImage" accept="image/*">
+                        <input type="file" id="profileImage" name="profileImage" accept="image/*" aria-labelledby="imageLabel">
                     </div>
                     <footer class="modal__actions">
                         <button type="submit" class="modal__save-btn">Save Changes</button>
@@ -111,40 +113,15 @@
         <!-- Image Card Modal -->
         <dialog id="imageModal" class="imgModal" aria-modal="true" role="dialog" aria-labelledby="imageModalTitle">
                 <div class="img-content imageModal__content" role="document">
-                    <!-- <span class="close">&times;</span> -->
-                    <button type="button" class="modal__close" aria-label="Close">
+                    <button type="button" class="modal__close" aria-label="Close modal">
                         &times;
                     </button>
                         <img  id="modalImg" class="" src="" alt="" />
                             <div class="modal__text">
                                 <p ></p>
-                                <img src="" alt="" />
+                               <span class="modal__icon"></span>
                             </div>
                 </div>
-                <div class="modal__form-group">
-                    <label for="profileBio">Bio:</label>
-                    <textarea
-                    id="profileBio"
-                    name="profileBio"
-                    rows="4"
-                    required
-                    ></textarea>
-                </div>
-                <div class="modal__form-group">
-                    <label for="profileImage">Profile Image:</label>
-                    <input
-                    type="file"
-                    id="profileImage"
-                    name="profileImage"
-                    accept="image/*"
-                    />
-                </div>
-                <footer class="modal__actions">
-                    <button type="submit" class="modal__save-btn">Save Changes</button>
-                    <button type="button" class="modal__cancel-btn">Cancel</button>
-                </footer>
-            </form>
-            </div>
         </dialog>
 
 
@@ -188,19 +165,6 @@
             </footer>
           </form>
         </dialog>
-
-    <!-- Image Card Modal -->
-    <!-- <dialog id="imageModal" class="imgModal">
-      <div class="img-content imageModal__content" role="document">
-        <span class="close">&times;</span>
-        <button type="button" class="modal__close">&times;</button>
-        <img id="modalImg" class="" src="" alt="" />
-        <div class="modal__text">
-          <p></p>
-          <img src="" alt="" />
-        </div>
-      </div>
-    </dialog> -->
 
     <script type="module" src="index.js"></script>
   </body>

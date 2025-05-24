@@ -1,0 +1,21 @@
+.footer {
+    padding: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__copyright {
+    color: var(--text-primary-color);
+    opacity: 0.7;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.28rem;
+    margin: var(--spacing-lg) 0;
+}
+
+@media (max-width: 1028px) {
+    .footer {
+        height: 100px;
+    }
+} 

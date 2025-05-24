@@ -110,8 +110,9 @@ function displayCard(cards) {
                     <p class="card__text">${card.text}</p>
                     <div class="card__icon-container">
                         <svg class="card__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg> </div>
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg> 
+                    </div>
                 </div>
             `;
       cardsContainer.append(cardsItem);
@@ -160,6 +161,7 @@ function setupCardPreviewModalListeners() {
     const modalText = document.querySelector(".modal__text p");
     const modalTextImg = document.querySelector(".modal__text img");
     const imageModal = document.getElementById("imageModal");
+    const modalIcon = document.querySelector('.modal__text .modal__icon')
 
     
     //mapping through cards
@@ -167,7 +169,9 @@ function setupCardPreviewModalListeners() {
       // Getting each card properties
       const cardImg = card.querySelector("img");
       const cardText = card.querySelector(".card__text").textContent;
-      const cardTextImg = card.querySelector(".card__icon");
+      const heartSVG = ` <svg class="card__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>`
     
       cardImg.addEventListener("click", () => {
         imageModal.style.display = "block";
@@ -175,8 +179,19 @@ function setupCardPreviewModalListeners() {
         if (cardImg && cardText) {
           modalImg.src = cardImg.src;
           modalText.textContent = cardText;
-          modalTextImg.src = cardTextImg.src;
-          modalTextImg.alt = cardTextImg.alt;
+          //svg icon markup
+          modalIcon.innerHTML = heartSVG;
+
+          //make the modal heart icon clickable
+          const modalHeart = modalIcon.querySelector('.card__icon');
+    if (modalHeart) {
+      modalHeart.addEventListener('click', function (e) {
+        e.stopPropagation();
+        this.classList.toggle('card__icon--active');
+        // Optionally, update aria-pressed for accessibility
+        this.setAttribute('aria-pressed', this.classList.contains('card__icon--active'));
+      });
+    }
         }
       });
     });

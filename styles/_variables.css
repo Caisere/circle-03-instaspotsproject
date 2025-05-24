@@ -1,0 +1,33 @@
+:root {
+    /* Colors */
+    --text-primary-color: #212121;
+    --button-text-color: #fcf5e5;
+    --primary-color: #ffffff;
+    --background-color: #fcf5e5;
+    --heart-color: #ed4956;
+    --modal-overlay: rgba(0, 0, 0, 0.5);
+    
+    /* Layout */
+    --maxWidth: 1440px;
+    --mobileMaxWidth: 320px;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    
+    /* Transitions */
+    --transition-fast: 0.3s ease;
+    --transition-medium: 0.5s ease;
+    --transition-slow: 0.9s ease;
+    
+    /* Shadows */
+    --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+} 

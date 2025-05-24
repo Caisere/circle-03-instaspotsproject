@@ -1,0 +1,23 @@
+.instaspots {
+    max-width: var(--maxWidth);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.instaspots__main {
+    flex: 1;
+    width: 100%;
+}
+
+@media (max-width: 1028px) {
+    .instaspots {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .instaspots {
+        padding: 0 var(--spacing-xs);
+    }
+} 

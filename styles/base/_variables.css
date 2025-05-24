@@ -1,0 +1,18 @@
+:root {
+    --text-primary-color: #212121;
+    --button-text-color: #fcf5e5;
+    --primary-color: #ffffff;
+    --maxWidth: 1440px;
+    --mobileMaxWidth: 320px;
+    --background-color: #fcf5e5;
+    --heart-color: #ed4956;
+    --modal-overlay: rgba(0, 0, 0, 0.5);
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --transition-fast: 0.3s ease;
+    --transition-medium: 0.5s ease;
+    --transition-slow: 0.9s ease;
+    --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+} 
