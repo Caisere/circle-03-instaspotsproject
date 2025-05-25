@@ -308,7 +308,7 @@ newPostForm.addEventListener("submit", (e) => {
     titleHelp.classList.remove("valid");
     return; // Stop here, do not continue
   }
-  const newCard = {
+  const newCard = { 
     image: URL.createObjectURL(fileInput.files[0]),
     text: titleInput.value,
     name: titleInput.value,
