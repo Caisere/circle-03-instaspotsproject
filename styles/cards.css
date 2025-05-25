@@ -2,20 +2,24 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-    padding: var(--spacing-md) 3.5rem;
+    padding: var(--spacing-md) 2rem;
 }
 
 .card {
     width: 100%;
     border-radius: var(--border-radius-md);
     overflow: hidden;
+  
 }
 
 .card__image {
+    flex: 1;
     width: 100%;
     border-radius: var(--border-radius-md);
     object-fit: cover;
     transition: transform var(--transition-slow);
+     display: block;
+    aspect-ratio: 4/4;
 }
 
 .card__image:hover {
@@ -63,7 +67,7 @@
     100% { transform: scale(1.1); }
 }
 
-@media (max-width: 1028px) {
+@media (max-width: 1024px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
         padding: var(--spacing-sm);

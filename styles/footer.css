@@ -14,7 +14,7 @@
     margin: var(--spacing-lg) 0;
 }
 
-@media (max-width: 1028px) {
+@media (max-width: 1024px) {
     .footer {
         height: 100px;
     }

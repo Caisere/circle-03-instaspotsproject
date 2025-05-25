@@ -43,11 +43,11 @@
 }
 .profile__bio {
   font-weight: 500;
-  font-size: 1rem;
   color: #212121b2;
   line-height: 20px;
   max-width: 40%;
   padding-top: 10px;
+ 
 }
 .profile__actions {
   display: flex;

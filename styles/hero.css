@@ -13,7 +13,7 @@
     justify-content: center;
 }
 
-@media (max-width: 1028px) {
+@media (max-width: 1024px) {
     .hero {
         padding: var(--spacing-sm);
     }

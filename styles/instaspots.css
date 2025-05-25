@@ -10,7 +10,7 @@
     width: 100%;
 }
 
-@media (max-width: 1028px) {
+@media (max-width: 1024px) {
     .instaspots {
         padding: 0 var(--spacing-sm);
     }

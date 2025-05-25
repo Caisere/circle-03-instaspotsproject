@@ -33,7 +33,7 @@ button {
   background-color: #6e6e6eb2;
 }
 
-@media (max-width: 1028px) {
+@media (max-width: 1024px) {
   
   /* didn't add height here since i added it to the desktop */
   .horizontal-line {
